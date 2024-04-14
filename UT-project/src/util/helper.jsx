@@ -20,3 +20,9 @@ export const fetchUser = async () => {
     const data = await axios.get('https://jsonplaceholder.typicode.com/posts');
     return data.data[0]
 }
+export const isAuthenticated = (isLogged = false) => {
+    if(isLogged){
+        return "WELCOME BACK";
+    }
+    throw new Error("User not logged")
+}
